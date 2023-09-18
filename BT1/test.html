@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" onclick="playGame()" value="Chơi" />
+    <script>
+      function playGame() {
+        let range = parseInt(prompt("Nhập khoảng số"));
+        let random = Math.floor(Math.random() * (range + 1));
+        for (let index = 0; index < 3; index++) {
+          let guess = parseInt(prompt("Hãy đoán số:"));
+          if (guess == random) {
+            alert("Bạn đoán đúng rồi");
+            break;
+          } else if (guess > random) {
+            alert("Số bạn vừa nhập lớn hơn");
+          } else {
+            alert("Số bạn vừa nhập nhỏ hơn");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

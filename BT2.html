@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Từ điển</title>
+  </head>
+  <body>
+    <div> Nhập từ: 
+    <input type="text" id="word" />
+    <input type="button" value="Tra cứu" onclick="search()" />
+    <p id="out"></p>
+    </div>
+
+    <script>
+      function search() {
+        let dic = ["array", "loop", "conđition"];
+        let dic2 = ["mảng", "vòng lặp", "điều kiện"];
+        let input = document.getElementById("word").value;
+        let index = dic.indexOf(input);
+        if (index == -1) {
+          alert("Không tìm thấy từ cần tra");
+        } else {
+          document.getElementById("out").innerHTML =
+            "Nghĩa của từ " + input + " là: " + dic2[index];
+        }
+        document.getElementById("word").value = "";
+      }
+    </script>
+  </body>
+</html>
