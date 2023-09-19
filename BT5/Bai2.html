@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [],
+        index = [];
+      let max = Number.NEGATIVE_INFINITY;
+      for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt("Nhập số nguyên thứ " + i);
+        while (isNaN(arr[i])) {
+          arr[i] = +prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
+        }
+
+        //Cách 1: Tìm tất cả index của max
+        if (arr[i] >= max) {
+          if (arr[i] > max) {
+            index=[];//index.splice(0, index.length);
+            index.push(i);
+          } else {
+            index.push(i);
+          }
+          max = arr[i];
+        }
+
+        //Cách 2: Tìm tất cả index của max
+        // if (arr[i] >= max) {
+        //     max = arr[i];
+        // }
+        // Để ngoài vòng lặp//
+        // let allIndex='';
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (arr[i] == max) {
+        //         allIndex += i +', '
+        //     }
+        // }
+      }
+    //   let allIndex=[];
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i] == max) {
+    //             allIndex.push(i);
+    //         }
+    //     }
+    //     if (allIndex.join() == "0123456789") {
+    //     alert("Các số bạn vừa nhập bằng nhau");
+    //   } else {
+    //     alert("Số lớn nhất trong mảng là " + max + " có vị trí là " + allIndex);
+    //   }
+      if (index.join('') == "0123456789") {
+        alert("Các số bạn vừa nhập bằng nhau");
+      } else {
+        alert("Số lớn nhất trong mảng là " + max + " có vị trí là " + index);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [],
+        count = 0;
+      let num = +prompt("Nhập độ dài mảng");
+      for (let i = 0; i < num; i++) {
+        arr[i] = +prompt("Nhập số nguyên thứ " + i);
+        while (isNaN(arr[i])) {
+          arr[i] = +prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
+        }
+      }
+      let inputNum = +prompt('Nhập số nguyên ');
+      if (arr.indexOf(inputNum) == -1) {
+        alert(inputNum + ' is not in the array');
+      } else {
+        alert(inputNum + ' is in the array');
+      }
+    </script>
+  </body>
+</html>

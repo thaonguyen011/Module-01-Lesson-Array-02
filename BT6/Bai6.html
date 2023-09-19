@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [], arr1 = [],
+        count = 0;
+      let num = prompt("Nhập độ dài mảng");
+      for (let i = 0; i < num; i++) {
+        arr[i] = prompt("Nhập phần tử thứ " + i);
+        arr1[i] = arr[i];
+        if (arr1[i] === '-') {
+            arr1[i] = '_';
+        }
+      }
+      alert('Old array: '+ arr.join(', '));
+      alert('New array: ' + arr1.join(', '));
+    </script>
+  </body>
+</html>

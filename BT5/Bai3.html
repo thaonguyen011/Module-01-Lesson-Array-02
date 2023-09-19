@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //Cop bài 2
+      let arr = [],
+        index = [];
+      let max = Number.NEGATIVE_INFINITY;
+      for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt("Nhập số nguyên thứ " + i);
+        while (isNaN(arr[i])) {
+          arr[i] = +prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
+        }
+        if (arr[i] >= max) {
+          if (arr[i] > max) {
+            index=[];//index.splice(0, index.length);
+            index.push(i);
+          } else {
+            index.push(i);
+          }
+          max = arr[i];
+        }
+        }
+        console.log(arr);
+         if (index.join('') == "0123456789") {
+        alert("Các số bạn vừa nhập bằng nhau");
+      } else {
+        alert("Số lớn nhất trong mảng là " + max + " có vị trí là " + index);
+      }
+
+      //Giá trị trung bình
+      let sum = 0;
+      for (let i in arr) {
+        sum += arr[i];
+      }
+      let average = sum/(arr.length);
+      alert('Giá trị trung bình của mảng là: '+average);
+    </script>
+  </body>
+</html>

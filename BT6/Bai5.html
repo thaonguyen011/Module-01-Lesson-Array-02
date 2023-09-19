@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Enter string 1:"),
+        b = prompt("Enter string 2:");
+
+      if (a.length !== b.length) {
+        alert("2 chuỗi không giống nhau");
+      } else {
+        for (let i = 0; i < a.length; i++) {
+          if (a[i] !== b[i]) {
+            alert("2 chuỗi không giống nhau");
+            break;
+          }
+        }
+        alert("2 chuỗi giống nhau");
+      }
+    </script>
+  </body>
+</html>
