@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function inputArr(x) {
+        let arr = [];
+        let num = +prompt("Nhập độ dài mảng " + x);
+        for (let i = 0; i < num; i++) {
+          arr[i] = +prompt("Nhập số nguyên thứ " + i);
+          while (isNaN(arr[i])) {
+            arr[i] = +prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
+          }
+        }
+        return arr;
+      }
+      let a=inputArr('a');
+      let b=inputArr('b');
+      let c = a.concat(b);
+      alert("Mảng a: " + a.join(", "));
+      alert("Mảng b: " + b.join(", "));
+      alert("Mảng c: " + c.join(", "));
+    </script>
+  </body>
+</html>
