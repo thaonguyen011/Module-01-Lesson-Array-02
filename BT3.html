@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="display()">
+    <h2>Caro Game Simple</h2>
+    <hr color="grey" />
+    <table id="caro"></table>
+    <br />
+    <input type="button" onclick="change()" value="Change value" />
+    <script>
+      let caro = [
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+      ];
+
+      let count = 0;
+
+      function change() {
+        let x = +prompt("Enter row");
+        let y = +prompt("Enter column");
+        count++;
+        if (count % 2 == 1) {
+          caro[x][y] = "x";
+        } else {
+          caro[x][y] = "o";
+        }
+        display();
+        check();
+      }
+
+      
+
+      function display() {
+        let e = "<tr>";
+        for (let i in caro) {
+          for (let j in caro[i]) {
+            e += '<td>'+caro[i][j] + '</td>';
+          }
+          e += "</tr>";
+        }
+        document.getElementById("caro").innerHTML = e;
+      }
+      function check() {
+        for (let i = 0; i < 5; i++) {
+          for (let j = 0; j < 5; j++) {
+            if (
+              ((caro[i][j] === caro[i][j + 1]) === caro[i][j + 2]) === "x" ||
+              ((caro[i][j] === caro[i + 1][j]) === caro[i + 2][j]) === "x"
+            ) {
+              alert("x thắng");
+            } else if (
+              (caro[i][j] === "o" &&
+                caro[i][j + 1] === "o" &&
+                caro[i][j + 2] === "o") ||
+              (caro[i][j] === "o" &&
+                caro[i + 1][j] === "o" &&
+                caro[i + 2][j] === "o")
+            ) {
+              alert("o thắng");
+            }
+            if (j == 2) {
+              break;
+            }
+          }
+          if (i == 2) {
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
