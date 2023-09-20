@@ -8,21 +8,22 @@
   <body>
     <script>
       let arr = [];
-      
+      arr1 = [];
+
       for (let i = 0; i < 10; i++) {
         arr[i] = +prompt("Nhập số nguyên thứ " + i);
+        arr1[i] = arr[i];
         while (isNaN(arr[i])) {
           arr[i] = +prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
         }
       }
-      let arr1 = arr;
-      console.log(arr1);
-      let b= arr1.sort(function(a,b) {
-        return b-a;
+
+      let b = arr.sort(function (a, b) {
+        return b - a;
       });
 
-      alert('Old array: ' + arr.join(', '));
-      alert('New array: ' + b.join(' ,'));
+      alert("Old array: " + arr1.join(", "));
+      alert("New array: " + b.join(", "));
     </script>
   </body>
 </html>

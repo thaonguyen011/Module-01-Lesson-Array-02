@@ -7,36 +7,30 @@
   </head>
   <body>
     <script>
-      //   let arr = [],
-      //     count = 0;
-      //   let num = +prompt("Nhập độ dài mảng");
-      //   for (let i = 0; i < num; i++) {
-      //     arr[i] = +prompt("Nhập số nguyên thứ " + i);
-      //     while (isNaN(arr[i])) {
-      //       arr[i] = +prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
-      //     }
-      //   }
-      //   let inputNum = +prompt('Nhập số nguyên ');
-      //   let index = arr.indexOf(inputNum);
-      //   if ( index == -1) {
-      //     alert(inputNum + ' is not in the array');
-      //   } else {
-      //     alert(inputNum + ' is in the array');
-      //     alert('New array is ' + arr.splice(arr[index],1));
-      //   }
-
-      const array = [2, 5, 9];
-
-      console.log(array);
-
-      const index = array.indexOf(5);
-      if (index > -1) {
-        // only splice array when item is found
-        array.splice(index, 1); // 2nd parameter means remove one item only
+      // Tạo mảng 10 phần tử
+      let arr = [];
+      for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt("Nhập số nguyên thứ " + i);
+        while (isNaN(arr[i])) {
+          arr[i] = +prompt("Bạn vừa nhập không phải số. Vui lòng nhập lại");
+        }
       }
-
-      // array = [2, 9]
-      console.log(array);
+      //Cắt phần tử ra khỏi mảng
+      let inputNum = +prompt("Nhập số nguyên ");
+      let count = 0;
+      for (let i = 0; i < arr.length; i++) {
+        if (inputNum === arr[i]) {
+          arr.splice(i, 1);
+          i--;
+          count++;
+        }
+      }
+      if (count == 0) {
+        alert(inputNum + " is not in the array");
+      } else {
+        alert(inputNum + " is in the array");
+        alert("New array is " + arr);
+      }
     </script>
   </body>
 </html>
