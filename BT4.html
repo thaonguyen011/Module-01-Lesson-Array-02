@@ -15,34 +15,46 @@
     <h2>Type anything slowly</h2>
     <!-- <input type="textarea" onkeydown="fc()" id="text" /> -->
     <textarea
-      onkeydown="fc()"
+      onkeydown="fc2()"
       id="text"
       style="width: 50%; height: 150px"
     ></textarea>
     <script>
+      //Cách 1:
+      let str = "TÔI LÀ MỘT ĐỨA NGỐC!!!";
       let i = 0;
-      let x = "";
-      let arr = ["TÔI", "LÀ", "MỘT", "ĐỨA", "NGỐC", "!!!"];
-      let arr2 = [];
-
-      for (let i = 0; i < arr.length; i++) {
-            for (j = 0; j < arr[i].length; j++) {
-                arr2.push(arr[i][j])
-            }
-            arr2.push(' ');
-
-        }
-     
-      function fc() {
+      let x = ''
+      function fc2() {
         document.getElementById("text").value = x;
-        x += arr2[i];
+        x += str[i];
         document.getElementById("text").value = x;
         i++;
-        arr2.push('  STOP!');
-        }
+        str +="  STOP!";
+      }
+      //Cách 2: Dài nhưng chỗ cuối nhấn ra sẽ nguyên chữ 'STOP!'
+      // let i = 0;
+      // let x = "";
+      // let arr = ["TÔI", "LÀ", "MỘT", "ĐỨA", "NGỐC", "!!!"];/ let arr = 'TÔI LÀ MỘT ĐỨA NGỐC';
+      // let arr2 = [];
 
-        // setTimeout('fc()', 1);
+      // for (let i = 0; i < arr.length; i++) {
+      //   for (j = 0; j < arr[i].length; j++) {
+      //     arr2.push(arr[i][j]);
+      //   }
+      //   arr2.push(" ");
+      // }
+
+      // function fc() {
+      //   document.getElementById("text").value = x;
+      //   x += arr2[i];
+      //   document.getElementById("text").value = x;
+      //   i++;
+      //   arr2.push("  STOP!");
+      // }
+
       
+
+      // setTimeout('fc()', 1);
     </script>
   </body>
 </html>
